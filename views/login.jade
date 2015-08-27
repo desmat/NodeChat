@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1 Login
+	if message
+		p.error= message
+	form(action="/login", method="post")
+		input(type="text", name="username", value=username placeholder="Username")
+		input(type="password", name="password", value="password")
+		button.btn.btn-large.btn-primary(type="submit") Sign in

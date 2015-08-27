@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	h1= title
+
+	form(action="/chat", method="post")
+		input(type="text", name="message", placeholder="message")
+		button.btn.btn-large.btn-primary(type="submit") Chat
+
+	ul
+		each val in messages
+			li= val.user.username + ": " + val.message
